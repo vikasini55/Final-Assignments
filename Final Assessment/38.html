@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //Object Destructuring
+const note = {  id: 1,  title: 'My first note',  date: '01/01/1970',
+}
+
+// Destructure properties into variables
+const { id, title, date } = note
+
+console.log(id)
+console.log(title)
+console.log(date)
+
+//spread Parameters
+// Create an Array
+const tools = ['hammer', 'screwdriver']
+const otherTools = ['wrench', 'saw']
+// Concatenate tools and otherTools together
+
+// Unpack the tools Array into the allTools Array
+const allTools = [...tools, ...otherTools]
+
+console.log(allTools)
+
+//rest parameters
+function restTest(one, two, ...args) {
+  console.log(one)
+  console.log(two)
+  console.log(args)
+}
+
+
+
+restTest(1, 2, 3, 4, 5, 6)
+
+
+
+    </script>
+</body>
+</html>

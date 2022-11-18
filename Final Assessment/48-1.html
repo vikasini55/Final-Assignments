@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>Compute the sum of the numbers in an array.</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [175, 50, 25];
+
+document.getElementById("demo").innerHTML = numbers.reduce(getSum, 0);
+
+function getSum(total, num) {
+  return total + Math.round(num);
+}
+</script>
+
+</body>
+</html>

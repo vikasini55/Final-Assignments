@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code editor</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!--Css link-->
+    <style>
+       * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1d1e22;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+nav {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    /* box-shadow: -1px 4px 5px 0px #fffdfd; */
+    margin-bottom: 20px;
+
+}
+
+.editor {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.editor #html-code {
+    width: 39%;
+    height: 30%;
+    position: absolute;
+    font-size: 18px;
+    padding: 10px;
+
+}
+
+.editor #css-code {
+    position: absolute;
+    width: 39%;
+    height: 30%;
+    top: 35%;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.editor #js-code {
+    position: absolute;
+    bottom: 0;
+    width: 39%;
+    height: 30%;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.editor #output {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    height: 100vh;
+    background-color: white;
+    font-size: 18px;
+    text-align: left;
+}
+
+.editor .heading {
+    position: absolute;
+    color: white;
+}
+
+.html {
+
+    top: -46px;
+    left: 10%;
+    margin: 20px;
+}
+
+.css {
+    bottom: 65%;
+    left: 12%;
+}
+
+.js {
+
+    bottom: 30%;
+    left: 10%;
+}
+
+.output {
+    right: 25%;
+    top: -25px;
+}
+
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <h1>Code Pen</h1>
+      
+    </nav>
+    <div class="editor">
+        <h2 class="heading html">HTML</h2>
+        <!--Html block-->
+       <textarea id="html-code" placeholder="Write html code here ..."></textarea>
+       
+       <h2 class="heading css">CSS</h2>
+       <!--css block-->
+       <textarea id="css-code" placeholder="Write CSS code here ..."></textarea></textarea>
+
+       <h2 class="heading js" >JS</h2>
+       <!--js block-->
+     <textarea id="js-code" placeholder="Write JavaScript code here ..."></textarea>
+     <h2 class="heading output" >Output Updated</h2>
+     <!--output block-->
+      <iframe id="output" ></iframe>
+    </div>
+   
+    
+
+
+<script>
+
+function run() {
+  let htmlCode = document.querySelector(".editor #html-code").value;
+  let cssCode =
+    "<style>" + document.querySelector(".editor #css-code").value + "</style>";
+  let jsCode = document.querySelector(".editor #js-code").value;
+  let output = document.querySelector(".editor #output");
+
+  output.contentDocument.body.innerHTML = htmlCode + cssCode;
+  output.contentWindow.eval(jsCode);
+}
+document.querySelector(".editor #html-code").addEventListener("keyup", run);
+document.querySelector(".editor #css-code").addEventListener("keyup", run);
+document.querySelector(".editor #js-code").addEventListener("keyup", run);
+
+  
+</script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function array_range(start, len)
+     {
+        var arr = new Array(len);
+        for (var i = 0; i < len; i++, start++)
+        {
+            arr[i] = start;
+        }
+              return arr;
+}
+
+
+
+
+console.log(array_range(1, 4));
+
+
+
+console.log(array_range(-6, 4));
+    </script>
+</body>
+</html>

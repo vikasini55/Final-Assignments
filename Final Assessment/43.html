@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var list_of_marks;
+list_of_marks = [12, 18, 25, 24, 2, 5, 18, 20, 20, 21];
+
+function find_more_than_average() {
+  var average, count, marks, percentage;
+  list_of_marks;
+  marks = 0;
+  count = 0;
+
+  for (var x, _pj_c = 0, _pj_a = list_of_marks, _pj_b = _pj_a.length; _pj_c < _pj_b; _pj_c += 1) {
+    x = _pj_a[_pj_c];
+    marks += x;
+  }
+
+  average = marks / list_of_marks.length;
+
+  for (var x, _pj_c = 0, _pj_a = list_of_marks, _pj_b = _pj_a.length; _pj_c < _pj_b; _pj_c += 1) {
+    x = _pj_a[_pj_c];
+
+    if (x > average) {
+      count += 1;
+    }
+  }
+
+  percentage = count * 100 / list_of_marks.length;
+  return percentage;
+}
+
+function sort_marks() {
+  list_of_marks;
+  list_of_marks = sorted(list_of_marks);
+  return list_of_marks;
+}
+
+function generate_frequency() {
+  var count, freq;
+  freq = [];
+  list_of_marks;
+
+  for (var x = 0, _pj_a = 26; x < _pj_a; x += 1) {
+    count = 0;
+
+    for (var y, _pj_d = 0, _pj_b = list_of_marks, _pj_c = _pj_b.length; _pj_d < _pj_c; _pj_d += 1) {
+      y = _pj_b[_pj_d];
+
+      if (x === y) {
+        count += 1;
+      }
+    }
+
+    freq.push(count);
+  }
+
+  return freq;
+}
+
+console.log(find_more_than_average());
+console.log(generate_frequency());
+console.log(sort_marks());
+    </script>
+</body>
+</html>

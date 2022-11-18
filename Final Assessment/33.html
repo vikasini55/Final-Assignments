@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function filter_array_values(arr) {
+  arr = arr.filter(isEligible);
+  return arr;
+}
+
+
+
+function isEligible(value) {
+  if(value !== false || value !== null || value !== 0 || value !== "") {
+    return value;
+  }
+}
+
+
+
+console.log(filter_array_values([58, '', 'abcd', true, null, false, 0]));
+    </script>
+</body>
+</html>

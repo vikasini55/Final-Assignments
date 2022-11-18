@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+
+//immutable: unable to change 
+
+var person= {
+    fname: 'Suchi',
+    lname: 'Karaka'
+}
+
+//Object.seal(person);  //add or delete
+
+//Object.freeze(person); //add nor delete nor change
+
+Object.defineProperty(person, 'fname', {writable:false});
+person.lname="new value";
+person.fname="sk";
+console.log(person);
+</script>
+</body></html>
+
